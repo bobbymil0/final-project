@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Resources - EcoTracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
+            <h1>EcoTracker</h1>
+        </div>
+        <nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculator.html">Carbon Calculator</a></li>
+                <li><a href="dashboard.html">My Dashboard</a></li>
+                <li><a href="resources.html" class="active">Eco Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Eco Resources</h2>
+            <p>Discover tips, guides, and tools to help you live more sustainably</p>
+        </section>
+
+        <section class="resources-container">
+            <div class="resources-filters">
+                <div class="search-container">
+                    <input type="text" id="resource-search" placeholder="Search resources...">
+                    <button id="search-btn" class="btn primary-btn">Search</button>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="filter-category">Category:</label>
+                        <select id="filter-category">
+                            <option value="all">All Categories</option>
+                            <option value="energy">Energy</option>
+                            <option value="transport">Transportation</option>
+                            <option value="food">Food & Diet</option>
+                            <option value="waste">Waste Reduction</option>
+                            <option value="water">Water Conservation</option>
+                            <option value="lifestyle">Sustainable Lifestyle</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-type">Resource Type:</label>
+                        <select id="filter-type">
+                            <option value="all">All Types</option>
+                            <option value="article">Articles</option>
+                            <option value="guide">Guides</option>
+                            <option value="tool">Tools</option>
+                            <option value="video">Videos</option>
+                            <option value="infographic">Infographics</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By:</label>
+                        <select id="sort-by">
+                            <option value="newest">Newest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="impact">Highest Impact</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tag-filters">
+                    <button class="tag-filter active" data-tag="all">All</button>
+                    <button class="tag-filter" data-tag="beginner">Beginner</button>
+                    <button class="tag-filter" data-tag="intermediate">Intermediate</button>
+                    <button class="tag-filter" data-tag="advanced">Advanced</button>
+                    <button class="tag-filter" data-tag="low-cost">Low Cost</button>
+                    <button class="tag-filter" data-tag="high-impact">High Impact</button>
+                </div>
+            </div>
+
+            <div class="resources-grid" id="resources-grid">
+                <!-- Resource cards will be dynamically generated here -->
+                <div class="resource-card" data-category="energy" data-type="guide" data-tags="beginner low-cost high-impact">
+                    <div class="resource-image">
+                        <img src="images/resources/energy-saving.jpg" alt="Energy saving tips">
+                        <div class="resource-type guide">Guide</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Home Energy Saving Tips</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category energy">Energy</span>
+                            <span class="resource-date">May 10, 2023</span>
+                        </div>
+                        <p>Simple ways to reduce your home energy consumption and lower your carbon footprint.</p>
+                        <div class="resource-tags">
+                            <span class="tag beginner">Beginner</span>
+                            <span class="tag low-cost">Low Cost</span>
+                            <span class="tag high-impact">High Impact</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="1">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="1" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="transport" data-type="article" data-tags="intermediate">
+                    <div class="resource-image">
+                        <img src="images/resources/sustainable-transport.jpg" alt="Sustainable transportation">
+                        <div class="resource-type article">Article</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Sustainable Transportation Options</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category transport">Transportation</span>
+                            <span class="resource-date">April 22, 2023</span>
+                        </div>
+                        <p>Explore eco-friendly transportation alternatives to reduce your carbon emissions.</p>
+                        <div class="resource-tags">
+                            <span class="tag intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="2">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="2" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="food" data-type="infographic" data-tags="beginner high-impact">
+                    <div class="resource-image">
+                        <img src="images/resources/plant-based-diet.jpg" alt="Plant-based diet">
+                        <div class="resource-type infographic">Infographic</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Plant-Based Diet Carbon Impact</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category food">Food & Diet</span>
+                            <span class="resource-date">March 15, 2023</span>
+                        </div>
+                        <p>Visual guide to the environmental benefits of reducing meat consumption.</p>
+                        <div class="resource-tags">
+                            <span class="tag beginner">Beginner</span>
+                            <span class="tag high-impact">High Impact</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="3">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="3" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="waste" data-type="guide" data-tags="beginner low-cost">
+                    <div class="resource-image">
+                        <img src="images/resources/zero-waste.jpg" alt="Zero waste lifestyle">
+                        <div class="resource-type guide">Guide</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Zero Waste Beginner's Guide</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category waste">Waste Reduction</span>
+                            <span class="resource-date">February 28, 2023</span>
+                        </div>
+                        <p>Start your journey to a zero waste lifestyle with these simple steps.</p>
+                        <div class="resource-tags">
+                            <span class="tag beginner">Beginner</span>
+                            <span class="tag low-cost">Low Cost</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="4">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="4" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="water" data-type="tool" data-tags="intermediate">
+                    <div class="resource-image">
+                        <img src="images/resources/water-conservation.jpg" alt="Water conservation">
+                        <div class="resource-type tool">Tool</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Water Usage Calculator</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category water">Water Conservation</span>
+                            <span class="resource-date">January 12, 2023</span>
+                        </div>
+                        <p>Calculate your household water usage and find ways to conserve this precious resource.</p>
+                        <div class="resource-tags">
+                            <span class="tag intermediate">Intermediate</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="5">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="5" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="lifestyle" data-type="video" data-tags="advanced high-impact">
+                    <div class="resource-image">
+                        <img src="images/resources/sustainable-home.jpg" alt="Sustainable home">
+                        <div class="resource-type video">Video</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Creating a Sustainable Home</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category lifestyle">Sustainable Lifestyle</span>
+                            <span class="resource-date">December 5, 2022</span>
+                        </div>
+                        <p>Comprehensive guide to transforming your living space into an eco-friendly environment.</p>
+                        <div class="resource-tags">
+                            <span class="tag advanced">Advanced</span>
+                            <span class="tag high-impact">High Impact</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="6">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="6" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="energy" data-type="article" data-tags="intermediate high-impact">
+                    <div class="resource-image">
+                        <img src="images/resources/renewable-energy.jpg" alt="Renewable energy">
+                        <div class="resource-type article">Article</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Switching to Renewable Energy</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category energy">Energy</span>
+                            <span class="resource-date">November 18, 2022</span>
+                        </div>
+                        <p>Options for transitioning to renewable energy sources for your home or business.</p>
+                        <div class="resource-tags">
+                            <span class="tag intermediate">Intermediate</span>
+                            <span class="tag high-impact">High Impact</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="7">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="7" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="transport" data-type="tool" data-tags="beginner">
+                    <div class="resource-image">
+                        <img src="images/resources/commute-calculator.jpg" alt="Commute calculator">
+                        <div class="resource-type tool">Tool</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Commute Carbon Calculator</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category transport">Transportation</span>
+                            <span class="resource-date">October 30, 2022</span>
+                        </div>
+                        <p>Calculate the carbon impact of your daily commute and explore greener alternatives.</p>
+                        <div class="resource-tags">
+                            <span class="tag beginner">Beginner</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="8">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="8" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="resource-card" data-category="food" data-type="guide" data-tags="intermediate low-cost">
+                    <div class="resource-image">
+                        <img src="images/resources/seasonal-eating.jpg" alt="Seasonal eating">
+                        <div class="resource-type guide">Guide</div>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Seasonal Eating Guide</h3>
+                        <div class="resource-meta">
+                            <span class="resource-category food">Food & Diet</span>
+                            <span class="resource-date">September 15, 2022</span>
+                        </div>
+                        <p>Reduce your food carbon footprint by eating local, seasonal produce.</p>
+                        <div class="resource-tags">
+                            <span class="tag intermediate">Intermediate</span>
+                            <span class="tag low-cost">Low Cost</span>
+                        </div>
+                    </div>
+                    <div class="resource-footer">
+                        <button class="btn secondary-btn view-resource" data-id="9">View Resource</button>
+                        <button class="btn icon-btn save-resource" data-id="9" title="Save for later">
+                            <span class="bookmark-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled>&laquo;</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">&raquo;</button>
+            </div>
+        </section>
+
+        <!-- Resource Modal -->
+        <div id="resource-modal" class="modal">
+            <div class="modal-content resource-modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="resource-modal-header">
+                    <h3 id="modal-resource-title">Resource Title</h3>
+                    <div class="resource-modal-meta">
+                        <span id="modal-resource-category" class="resource-category">Category</span>
+                        <span id="modal-resource-type" class="resource-type">Type</span>
+                        <span id="modal-resource-date">Date</span>
+                    </div>
+                </div>
+                <div class="resource-modal-image">
+                    <img id="modal-resource-image" src="/placeholder.svg" alt="Resource image">
+                </div>
+                <div class="resource-modal-content" id="modal-resource-content">
+                    <!-- Resource content will be loaded here -->
+                </div>
+                <div class="resource-modal-actions">
+                    <button class="btn primary-btn" id="save-to-dashboard">Save to Dashboard</button>
+                    <button class="btn secondary-btn" id="share-resource">Share</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
+                <h2>EcoTracker</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculator.html">Carbon Calculator</a></li>
+                    <li><a href="dashboard.html">My Dashboard</a></li>
+                    <li><a href="resources.html">Eco Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get eco-friendly tips and updates</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+                <p id="newsletter-message" class="form-message"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoTracker. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="resources.js"></script>
+</body>
+</html>
+fonts.googleapis.com
+Nischay
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantPal - Your Plant Care Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">PlantPal</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link">Plant Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Keep Your Plants Happy & Healthy</h1>
+                    <p class="hero-description">
+                        Never forget to water your plants again! PlantPal helps you track watering schedules, 
+                        monitor plant health, and build the perfect indoor garden.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
+                        <a href="about.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="plant-illustration">
+                        <div class="pot"></div>
+                        <div class="plant">
+                            <div class="leaf leaf-1"></div>
+                            <div class="leaf leaf-2"></div>
+                            <div class="leaf leaf-3"></div>
+                            <div class="stem"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose PlantPal?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💧</div>
+                        <h3>Smart Watering Reminders</h3>
+                        <p>Get personalized watering schedules based on your plant types and care needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Health Tracking</h3>
+                        <p>Monitor your plants' health status and track their growth over time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏡</div>
+                        <h3>Garden Gallery</h3>
+                        <p>Organize and view all your plants in a beautiful, easy-to-navigate gallery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access your plant care tracker anywhere, on any device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1000">0</div>
+                        <div class="stat-label">Happy Plants</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Plant Parents</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Plant Journey?</h2>
+                    <p>Join thousands of plant lovers who trust PlantPal to keep their green friends thriving.</p>
+                    <a href="tracker.html" class="btn btn-primary btn-large">Get Started Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌱</span>
+                        <span class="logo-text">PlantPal</span>
+                    </div>
+                    <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tracker.html">Plant Tracker</a></li>
+                        <li><a href="gallery.html">My Garden</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Plant Care Tips</h4>
+                    <ul>
+                        <li><a href="#" onclick="showTip('watering')">Watering Guide</a></li>
+                        <li><a href="#" onclick="showTip('light')">Light Requirements</a></li>
+                        <li><a href="#" onclick="showTip('soil')">Soil Care</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="tip-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="tip-title"></h3>
+            <p id="tip-content"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
