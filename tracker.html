@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Tracker - PlantPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">PlantPal</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link active">Plant Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="tracker-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>Plant Tracker</h1>
+                <p>Manage your plants and track their care schedule</p>
+            </div>
+
+            <div class="tracker-controls">
+                <button id="add-plant-btn" class="btn btn-primary">
+                    <span>+</span> Add New Plant
+                </button>
+                <div class="tracker-stats">
+                    <div class="stat-badge">
+                        <span class="stat-number" id="total-plants">0</span>
+                        <span class="stat-label">Total Plants</span>
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-number" id="needs-water">0</span>
+                        <span class="stat-label">Need Water</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plants-container">
+                <div id="plants-grid" class="plants-grid">
+                    <!-- Plants will be dynamically added here -->
+                </div>
+                <div id="empty-state" class="empty-state">
+                    <div class="empty-icon">🌱</div>
+                    <h3>No plants yet!</h3>
+                    <p>Add your first plant to start tracking its care schedule.</p>
+                    <button class="btn btn-primary" onclick="openAddPlantModal()">Add Your First Plant</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Plant Modal -->
+    <div id="add-plant-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Add New Plant</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="plant-form" class="plant-form">
+                <div class="form-group">
+                    <label for="plant-name">Plant Name *</label>
+                    <input type="text" id="plant-name" name="name" required>
+                    <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="plant-type">Plant Type *</label>
+                    <select id="plant-type" name="type" required>
+                        <option value="">Select plant type</option>
+                        <option value="succulent">Succulent</option>
+                        <option value="tropical">Tropical</option>
+                        <option value="flowering">Flowering</option>
+                        <option value="herb">Herb</option>
+                        <option value="fern">Fern</option>
+                        <option value="cactus">Cactus</option>
+                        <option value="vine">Vine</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error-message" id="type-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="watering-frequency">Watering Frequency (days) *</label>
+                    <input type="number" id="watering-frequency" name="wateringFrequency" min="1" max="30" required>
+                    <span class="error-message" id="frequency-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-watered">Last Watered</label>
+                    <input type="date" id="last-watered" name="lastWatered">
+                </div>
+
+                <div class="form-group">
+                    <label for="plant-location">Location</label>
+                    <input type="text" id="plant-location" name="location" placeholder="e.g., Living room window">
+                </div>
+
+                <div class="form-group">
+                    <label for="plant-notes">Care Notes</label>
+                    <textarea id="plant-notes" name="notes" rows="3" placeholder="Special care instructions..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeAddPlantModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Add Plant</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌱</span>
+                        <span class="logo-text">PlantPal</span>
+                    </div>
+                    <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
