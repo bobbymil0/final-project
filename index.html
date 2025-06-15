@@ -3,9 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project</title>
+    <title>EcoTracker - Understand Your Environmental Impact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
+            <h1>EcoTracker</h1>
+        </div>
+        <nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="calculator.html">Carbon Calculator</a></li>
+                <li><a href="dashboard.html">My Dashboard</a></li>
+                <li><a href="resources.html">Eco Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Track Your <span class="highlight">Environmental Impact</span></h2>
+                <p>Understand your carbon footprint, set sustainability goals, and make a positive difference for our planet.</p>
+                <div class="hero-buttons">
+                    <a href="calculator.html" class="btn primary-btn">Calculate My Footprint</a>
+                    <a href="dashboard.html" class="btn secondary-btn">View My Dashboard</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-earth.svg" alt="Earth illustration with sustainability elements">
+            </div>
+        </section>
+
+        <section class="impact-counter">
+            <div class="counter-container">
+                <div class="counter-item">
+                    <div class="counter" id="users-counter">0</div>
+                    <p>Users Tracking</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter" id="carbon-counter">0</div>
+                    <p>Tons CO₂ Reduced</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter" id="trees-counter">0</div>
+                    <p>Trees Equivalent</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Use EcoTracker?</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon calculate-icon"></div>
+                    <h3>Calculate Your Impact</h3>
+                    <p>Get a personalized carbon footprint calculation based on your lifestyle choices and daily habits.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon track-icon"></div>
+                    <h3>Track Your Progress</h3>
+                    <p>Set sustainability goals and monitor your improvements over time with interactive charts and metrics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon learn-icon"></div>
+                    <h3>Learn & Improve</h3>
+                    <p>Discover personalized tips and resources to help reduce your environmental impact in meaningful ways.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Calculate Your Footprint</h3>
+                    <p>Answer questions about your lifestyle, transportation, diet, and energy usage to get your baseline carbon footprint.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set Sustainability Goals</h3>
+                    <p>Choose areas where you want to improve and set achievable goals to reduce your environmental impact.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Track & Improve</h3>
+                    <p>Log your eco-friendly actions, track your progress, and watch your carbon footprint shrink over time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-container">
+                    <div class="testimonial active">
+                        <div class="testimonial-content">
+                            <p>"EcoTracker helped me understand my environmental impact and make meaningful changes. I've reduced my carbon footprint by 30% in just three months!"</p>
+                            <div class="testimonial-author">
+                                <img src="images/user-1.jpg" alt="User avatar">
+                                <div>
+                                    <h4>Sarah J.</h4>
+                                    <p>Using EcoTracker for 6 months</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"The personalized recommendations were eye-opening. Small changes to my daily routine have made a big difference, and the tracking tools keep me motivated."</p>
+                            <div class="testimonial-author">
+                                <img src="images/user-2.jpg" alt="User avatar">
+                                <div>
+                                    <h4>Michael T.</h4>
+                                    <p>Using EcoTracker for 3 months</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            <p>"As a family, we've turned reducing our carbon footprint into a fun challenge. The kids love seeing our progress on the dashboard and suggesting new eco-friendly habits."</p>
+                            <div class="testimonial-author">
+                                <img src="images/user-3.jpg" alt="User avatar">
+                                <div>
+                                    <h4>The Rodriguez Family</h4>
+                                    <p>Using EcoTracker for 1 year</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-dot active" data-index="0"></button>
+                    <button class="testimonial-dot" data-index="1"></button>
+                    <button class="testimonial-dot" data-index="2"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta-content">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join thousands of others who are tracking and reducing their environmental impact with EcoTracker.</p>
+                <a href="calculator.html" class="btn primary-btn">Get Started Now</a>
+            </div>
+            <div class="cta-image">
+                <img src="images/cta-illustration.svg" alt="Sustainability illustration">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
+                <h2>EcoTracker</h2>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="calculator.html">Carbon Calculator</a></li>
+                    <li><a href="dashboard.html">My Dashboard</a></li>
+                    <li><a href="resources.html">Eco Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get eco-friendly tips and updates</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+                <p id="newsletter-message" class="form-message"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EcoTracker. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Home page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter animation
+            function animateCounter(elementId, targetValue, duration) {
+                const element = document.getElementById(elementId);
+                const startValue = 0;
+                const increment = Math.ceil(targetValue / (duration / 16));
+                let currentValue = startValue;
+                
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= targetValue) {
+                        clearInterval(timer);
+                        currentValue = targetValue;
+                    }
+                    element.textContent = currentValue.toLocaleString();
+                }, 16);
+            }
+            
+            // Intersection Observer to trigger counter animation when in view
+            const counterSection = document.querySelector('.impact-counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('users-counter', 15782, 2000);
+                        animateCounter('carbon-counter', 4350, 2000);
+                        animateCounter('trees-counter', 87400, 2000);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(counterSection);
+            
+            // Testimonial slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                testimonials[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentIndex = index;
+            }
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    showTestimonial(index);
+                });
+            });
+            
+            // Auto-rotate testimonials
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(currentIndex);
+            }, 5000);
+            
+            // Newsletter form submission
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterMessage = document.getElementById('newsletter-message');
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Simple validation
+                    if (email && email.includes('@') && email.includes('.')) {
+                        newsletterMessage.textContent = 'Thank you for subscribing!';
+                        newsletterMessage.className = 'form-message success';
+                        this.reset();
+                    } else {
+                        newsletterMessage.textContent = 'Please enter a valid email address.';
+                        newsletterMessage.className = 'form-message error';
+                    }
+                    
+                    // Hide message after 3 seconds
+                    setTimeout(() => {
+                        newsletterMessage.textContent = '';
+                        newsletterMessage.className = 'form-message';
+                    }, 3000);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
