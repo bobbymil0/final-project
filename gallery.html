@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Garden - PlantPal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">PlantPal</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link">Plant Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link active">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-main">
+        <div class="container">
+            <div class="page-header">
+                <h1>My Garden</h1>
+                <p>View and manage all your plants in one beautiful gallery</p>
+            </div>
+
+            <div class="gallery-controls">
+                <div class="filter-controls">
+                    <label for="type-filter">Filter by Type:</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="succulent">Succulent</option>
+                        <option value="tropical">Tropical</option>
+                        <option value="flowering">Flowering</option>
+                        <option value="herb">Herb</option>
+                        <option value="fern">Fern</option>
+                        <option value="cactus">Cactus</option>
+                        <option value="vine">Vine</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="sort-controls">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="name">Name</option>
+                        <option value="type">Type</option>
+                        <option value="lastWatered">Last Watered</option>
+                        <option value="nextWatering">Next Watering</option>
+                    </select>
+                </div>
+
+                <div class="view-controls">
+                    <button id="grid-view" class="view-btn active" title="Grid View">
+                        <span class="view-icon">⊞</span>
+                    </button>
+                    <button id="list-view" class="view-btn" title="List View">
+                        <span class="view-icon">☰</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="gallery-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">🌿</div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="gallery-total">0</div>
+                        <div class="stat-label">Total Plants</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💧</div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="gallery-watered">0</div>
+                        <div class="stat-label">Watered Today</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-info">
+                        <div class="stat-number" id="gallery-overdue">0</div>
+                        <div class="stat-label">Overdue</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gallery-container" class="gallery-container grid-view">
+                <!-- Plants will be dynamically added here -->
+            </div>
+
+            <div id="gallery-empty" class="empty-state">
+                <div class="empty-icon">🏡</div>
+                <h3>Your garden is empty!</h3>
+                <p>Start adding plants to see them in your beautiful garden gallery.</p>
+                <a href="tracker.html" class="btn btn-primary">Add Plants</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌱</span>
+                        <span class="logo-text">PlantPal</span>
+                    </div>
+                    <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
