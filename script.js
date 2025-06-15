@@ -379,7 +379,7 @@ function handlePlantFormSubmit(e) {
   const requiredFields = ["name", "type", "wateringFrequency"]
 
   requiredFields.forEach((fieldName) => {
-    const field = document.querySelector([name="${fieldName}"])
+    const field = document.querySelector(`[name="${fieldName}"]`)
     if (!validateField(field)) {
       isValid = false
     }
@@ -550,7 +550,7 @@ function getWateringStatus(plant) {
     return {
       class: "status-overdue",
       icon: "🚨",
-      text: Overdue by ${daysSince - frequency} days,
+      text: `Overdue by ${daysSince - frequency} days`,
     }
   } else if (daysSince >= frequency) {
     return {
@@ -563,7 +563,7 @@ function getWateringStatus(plant) {
     return {
       class: "status-good",
       icon: "✅",
-      text: Water in ${daysUntilNext} days,
+      text: `Water in ${daysUntilNext} days`,
     }
   }
 }
@@ -605,19 +605,19 @@ function waterPlant(plantId) {
   renderPlants()
   updateTrackerStats()
 
-  showNotification(${plant.name} has been watered! 💧, "success")
+  showNotification(`${plant.name} has been watered! 💧`, "success")
 }
 
 function deletePlant(plantId) {
   const plant = plants.find((p) => p.id === plantId)
   if (!plant) return
 
-  if (confirm(Are you sure you want to delete ${plant.name}? This action cannot be undone.)) {
+  if (confirm(`Are you sure you want to delete ${plant.name}? This action cannot be undone.`)) {
     plants = plants.filter((p) => p.id !== plantId)
     savePlantsToStorage()
     renderPlants()
     updateTrackerStats()
-    showNotification(${plant.name} has been removed from your garden., "info")
+    showNotification(`${plant.name} has been removed from your garden.`, "info")
   }
 }
 
@@ -671,7 +671,7 @@ function setGalleryView(viewType) {
   const listBtn = document.getElementById("list-view")
 
   if (container) {
-    container.className = gallery-container ${viewType}-view
+    container.className = `gallery-container ${viewType}-view`
   }
 
   if (gridBtn && listBtn) {
@@ -761,7 +761,7 @@ function renderGallery(plantsToRender = plants) {
       editBtn.addEventListener("click", (e) => {
         e.stopPropagation()
         // Redirect to tracker page for editing
-        window.location.href = tracker.html?edit=${plantId}
+        window.location.href = `tracker.html?edit=${plantId}`
       })
     }
 
@@ -886,7 +886,7 @@ function validateContactField(field) {
     case "firstName":
     case "lastName":
       if (!value) {
-        errorMessage = ${fieldName === "firstName" ? "First" : "Last"} name is required
+        errorMessage = `${fieldName === "firstName" ? "First" : "Last"} name is required`
         isValid = false
       } else if (value.length < 2) {
         errorMessage = "Name must be at least 2 characters"
@@ -968,7 +968,7 @@ function handleContactFormSubmit(e) {
   const requiredFields = ["firstName", "lastName", "email", "subject", "message", "terms"]
 
   requiredFields.forEach((fieldName) => {
-    const field = form.querySelector([name="${fieldName}"])
+    const field = form.querySelector(`[name="${fieldName}"]`)
     if (field && !validateContactField(field)) {
       isValid = false
     }
@@ -1077,7 +1077,7 @@ function updateUI() {
 
     if (
       (currentPage === "index" && href === "index.html") ||
-      (currentPage !== "index" && href === ${currentPage}.html)
+      (currentPage !== "index" && href === `${currentPage}.html`)
     ) {
       link.classList.add("active")
     } else {
@@ -1089,7 +1089,7 @@ function updateUI() {
 function showNotification(message, type = "info") {
   // Create notification element
   const notification = document.createElement("div")
-  notification.className = notification notification-${type}
+  notification.className = `notification notification-${type}`
   notification.innerHTML = `
         <span class="notification-message">${escapeHtml(message)}</span>
         <button class="notification-close" onclick="this.parentElement.remove()">&times;</button>
@@ -1183,7 +1183,7 @@ function formatDate(date) {
   } else if (diffDays === 1) {
     return "Yesterday"
   } else if (diffDays < 7) {
-    return ${diffDays} days ago
+    return `${diffDays} days ago`
   } else {
     return date.toLocaleDateString()
   }
