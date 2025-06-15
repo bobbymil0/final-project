@@ -1217,7 +1217,7 @@ window.addEventListener("load", () => {
   }
 })
 
-// Export functions for global access
+
 window.openAddPlantModal = openAddPlantModal
 window.closeAddPlantModal = closeAddPlantModal
 window.toggleTip = toggleTip
