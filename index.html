@@ -3,294 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoTracker - Understand Your Environmental Impact</title>
+    <title>PlantPal - Your Plant Care Companion</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
-            <h1>EcoTracker</h1>
-        </div>
-        <nav>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="calculator.html">Carbon Calculator</a></li>
-                <li><a href="dashboard.html">My Dashboard</a></li>
-                <li><a href="resources.html">Eco Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span class="logo-text">PlantPal</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tracker.html" class="nav-link">Plant Tracker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">My Garden</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h2>Track Your <span class="highlight">Environmental Impact</span></h2>
-                <p>Understand your carbon footprint, set sustainability goals, and make a positive difference for our planet.</p>
-                <div class="hero-buttons">
-                    <a href="calculator.html" class="btn primary-btn">Calculate My Footprint</a>
-                    <a href="dashboard.html" class="btn secondary-btn">View My Dashboard</a>
+                <div class="hero-text">
+                    <h1 class="hero-title">Keep Your Plants Happy & Healthy</h1>
+                    <p class="hero-description">
+                        Never forget to water your plants again! PlantPal helps you track watering schedules, 
+                        monitor plant health, and build the perfect indoor garden.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
+                        <a href="about.html" class="btn btn-secondary">Learn More</a>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="images/hero-earth.svg" alt="Earth illustration with sustainability elements">
-            </div>
-        </section>
-
-        <section class="impact-counter">
-            <div class="counter-container">
-                <div class="counter-item">
-                    <div class="counter" id="users-counter">0</div>
-                    <p>Users Tracking</p>
-                </div>
-                <div class="counter-item">
-                    <div class="counter" id="carbon-counter">0</div>
-                    <p>Tons CO₂ Reduced</p>
-                </div>
-                <div class="counter-item">
-                    <div class="counter" id="trees-counter">0</div>
-                    <p>Trees Equivalent</p>
+                <div class="hero-image">
+                    <div class="plant-illustration">
+                        <div class="pot"></div>
+                        <div class="plant">
+                            <div class="leaf leaf-1"></div>
+                            <div class="leaf leaf-2"></div>
+                            <div class="leaf leaf-3"></div>
+                            <div class="stem"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="features">
-            <h2>Why Use EcoTracker?</h2>
-            <div class="feature-cards">
-                <div class="feature-card">
-                    <div class="feature-icon calculate-icon"></div>
-                    <h3>Calculate Your Impact</h3>
-                    <p>Get a personalized carbon footprint calculation based on your lifestyle choices and daily habits.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon track-icon"></div>
-                    <h3>Track Your Progress</h3>
-                    <p>Set sustainability goals and monitor your improvements over time with interactive charts and metrics.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon learn-icon"></div>
-                    <h3>Learn & Improve</h3>
-                    <p>Discover personalized tips and resources to help reduce your environmental impact in meaningful ways.</p>
+            <div class="container">
+                <h2 class="section-title">Why Choose PlantPal?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💧</div>
+                        <h3>Smart Watering Reminders</h3>
+                        <p>Get personalized watering schedules based on your plant types and care needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Health Tracking</h3>
+                        <p>Monitor your plants' health status and track their growth over time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏡</div>
+                        <h3>Garden Gallery</h3>
+                        <p>Organize and view all your plants in a beautiful, easy-to-navigate gallery.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access your plant care tracker anywhere, on any device.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Calculate Your Footprint</h3>
-                    <p>Answer questions about your lifestyle, transportation, diet, and energy usage to get your baseline carbon footprint.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Set Sustainability Goals</h3>
-                    <p>Choose areas where you want to improve and set achievable goals to reduce your environmental impact.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Track & Improve</h3>
-                    <p>Log your eco-friendly actions, track your progress, and watch your carbon footprint shrink over time.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials">
-            <h2>What Our Users Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial-container">
-                    <div class="testimonial active">
-                        <div class="testimonial-content">
-                            <p>"EcoTracker helped me understand my environmental impact and make meaningful changes. I've reduced my carbon footprint by 30% in just three months!"</p>
-                            <div class="testimonial-author">
-                                <img src="images/user-1.jpg" alt="User avatar">
-                                <div>
-                                    <h4>Sarah J.</h4>
-                                    <p>Using EcoTracker for 6 months</p>
-                                </div>
-                            </div>
-                        </div>
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="1000">0</div>
+                        <div class="stat-label">Happy Plants</div>
                     </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"The personalized recommendations were eye-opening. Small changes to my daily routine have made a big difference, and the tracking tools keep me motivated."</p>
-                            <div class="testimonial-author">
-                                <img src="images/user-2.jpg" alt="User avatar">
-                                <div>
-                                    <h4>Michael T.</h4>
-                                    <p>Using EcoTracker for 3 months</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Plant Parents</div>
                     </div>
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"As a family, we've turned reducing our carbon footprint into a fun challenge. The kids love seeing our progress on the dashboard and suggesting new eco-friendly habits."</p>
-                            <div class="testimonial-author">
-                                <img src="images/user-3.jpg" alt="User avatar">
-                                <div>
-                                    <h4>The Rodriguez Family</h4>
-                                    <p>Using EcoTracker for 1 year</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Success Rate</div>
                     </div>
-                </div>
-                <div class="testimonial-controls">
-                    <button class="testimonial-dot active" data-index="0"></button>
-                    <button class="testimonial-dot" data-index="1"></button>
-                    <button class="testimonial-dot" data-index="2"></button>
                 </div>
             </div>
         </section>
 
         <section class="cta">
-            <div class="cta-content">
-                <h2>Ready to Make a Difference?</h2>
-                <p>Join thousands of others who are tracking and reducing their environmental impact with EcoTracker.</p>
-                <a href="calculator.html" class="btn primary-btn">Get Started Now</a>
-            </div>
-            <div class="cta-image">
-                <img src="images/cta-illustration.svg" alt="Sustainability illustration">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Start Your Plant Journey?</h2>
+                    <p>Join thousands of plant lovers who trust PlantPal to keep their green friends thriving.</p>
+                    <a href="tracker.html" class="btn btn-primary btn-large">Get Started Now</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/ecotracker-logo.svg" alt="EcoTracker Logo">
-                <h2>EcoTracker</h2>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌱</span>
+                        <span class="logo-text">PlantPal</span>
+                    </div>
+                    <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="tracker.html">Plant Tracker</a></li>
+                        <li><a href="gallery.html">My Garden</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Plant Care Tips</h4>
+                    <ul>
+                        <li><a href="#" onclick="showTip('watering')">Watering Guide</a></li>
+                        <li><a href="#" onclick="showTip('light')">Light Requirements</a></li>
+                        <li><a href="#" onclick="showTip('soil')">Soil Care</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="calculator.html">Carbon Calculator</a></li>
-                    <li><a href="dashboard.html">My Dashboard</a></li>
-                    <li><a href="resources.html">Eco Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h3>Stay Updated</h3>
-                <p>Get eco-friendly tips and updates</p>
-                <form id="newsletter-form" class="newsletter-form">
-                    <input type="email" placeholder="Your email" required>
-                    <button type="submit" class="btn primary-btn">Subscribe</button>
-                </form>
-                <p id="newsletter-message" class="form-message"></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 EcoTracker. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Facebook</a>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
-    <script>
-        // Home page specific JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            // Counter animation
-            function animateCounter(elementId, targetValue, duration) {
-                const element = document.getElementById(elementId);
-                const startValue = 0;
-                const increment = Math.ceil(targetValue / (duration / 16));
-                let currentValue = startValue;
-                
-                const timer = setInterval(() => {
-                    currentValue += increment;
-                    if (currentValue >= targetValue) {
-                        clearInterval(timer);
-                        currentValue = targetValue;
-                    }
-                    element.textContent = currentValue.toLocaleString();
-                }, 16);
-            }
-            
-            // Intersection Observer to trigger counter animation when in view
-            const counterSection = document.querySelector('.impact-counter');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateCounter('users-counter', 15782, 2000);
-                        animateCounter('carbon-counter', 4350, 2000);
-                        animateCounter('trees-counter', 87400, 2000);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            observer.observe(counterSection);
-            
-            // Testimonial slider
-            const testimonials = document.querySelectorAll('.testimonial');
-            const dots = document.querySelectorAll('.testimonial-dot');
-            let currentIndex = 0;
-            
-            function showTestimonial(index) {
-                testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                testimonials[index].classList.add('active');
-                dots[index].classList.add('active');
-                currentIndex = index;
-            }
-            
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const index = parseInt(dot.getAttribute('data-index'));
-                    showTestimonial(index);
-                });
-            });
-            
-            // Auto-rotate testimonials
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % testimonials.length;
-                showTestimonial(currentIndex);
-            }, 5000);
-            
-            // Newsletter form submission
-            const newsletterForm = document.getElementById('newsletter-form');
-            const newsletterMessage = document.getElementById('newsletter-message');
-            
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = this.querySelector('input[type="email"]').value;
-                    
-                    // Simple validation
-                    if (email && email.includes('@') && email.includes('.')) {
-                        newsletterMessage.textContent = 'Thank you for subscribing!';
-                        newsletterMessage.className = 'form-message success';
-                        this.reset();
-                    } else {
-                        newsletterMessage.textContent = 'Please enter a valid email address.';
-                        newsletterMessage.className = 'form-message error';
-                    }
-                    
-                    // Hide message after 3 seconds
-                    setTimeout(() => {
-                        newsletterMessage.textContent = '';
-                        newsletterMessage.className = 'form-message';
-                    }, 3000);
-                });
-            }
-        });
-    </script>
+    <div id="tip-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="tip-title"></h3>
+            <p id="tip-content"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
