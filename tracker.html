@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Tracker - PlantPal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Plant Tracker - Grovi</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tracker.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <span class="logo-icon">🌱</span>
-                    <span class="logo-text">PlantPal</span>
+                    <span class="logo-text">Grovi</span>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -32,6 +33,9 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                <div class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -49,9 +53,11 @@
             </div>
 
             <div class="tracker-controls">
-                <button id="add-plant-btn" class="btn btn-primary">
-                    <span>+</span> Add New Plant
-                </button>
+                <div class="control-buttons">
+                    <button id="add-plant-btn" class="btn btn-primary">
+                        <span>+</span> Add New Plant
+                    </button>
+                </div>
                 <div class="tracker-stats">
                     <div class="stat-badge">
                         <span class="stat-number" id="total-plants">0</span>
@@ -61,6 +67,40 @@
                         <span class="stat-number" id="needs-water">0</span>
                         <span class="stat-label">Need Water</span>
                     </div>
+                    <div class="stat-badge">
+                        <span class="stat-number" id="healthy-plants">0</span>
+                        <span class="stat-label">Healthy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracker-filters">
+                <div class="filter-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All Plants</option>
+                        <option value="needs-water">Needs Water</option>
+                        <option value="overdue">Overdue</option>
+                        <option value="healthy">Healthy</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Filter by Type:</label>
+                    <select id="type-filter">
+                        <option value="all">All Types</option>
+                        <option value="succulent">Succulent</option>
+                        <option value="tropical">Tropical</option>
+                        <option value="flowering">Flowering</option>
+                        <option value="herb">Herb</option>
+                        <option value="fern">Fern</option>
+                        <option value="cactus">Cactus</option>
+                        <option value="vine">Vine</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label for="plant-search">Search:</label>
+                    <input type="text" id="plant-search" placeholder="Search plants...">
                 </div>
             </div>
 
@@ -86,37 +126,39 @@
                 <span class="close">&times;</span>
             </div>
             <form id="plant-form" class="plant-form">
-                <div class="form-group">
-                    <label for="plant-name">Plant Name *</label>
-                    <input type="text" id="plant-name" name="name" required>
-                    <span class="error-message" id="name-error"></span>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="plant-name">Plant Name *</label>
+                        <input type="text" id="plant-name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="plant-type">Plant Type *</label>
+                        <select id="plant-type" name="type" required>
+                            <option value="">Select plant type</option>
+                            <option value="succulent">Succulent</option>
+                            <option value="tropical">Tropical</option>
+                            <option value="flowering">Flowering</option>
+                            <option value="herb">Herb</option>
+                            <option value="fern">Fern</option>
+                            <option value="cactus">Cactus</option>
+                            <option value="vine">Vine</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="type-error"></span>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="plant-type">Plant Type *</label>
-                    <select id="plant-type" name="type" required>
-                        <option value="">Select plant type</option>
-                        <option value="succulent">Succulent</option>
-                        <option value="tropical">Tropical</option>
-                        <option value="flowering">Flowering</option>
-                        <option value="herb">Herb</option>
-                        <option value="fern">Fern</option>
-                        <option value="cactus">Cactus</option>
-                        <option value="vine">Vine</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <span class="error-message" id="type-error"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="watering-frequency">Watering Frequency (days) *</label>
-                    <input type="number" id="watering-frequency" name="wateringFrequency" min="1" max="30" required>
-                    <span class="error-message" id="frequency-error"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="last-watered">Last Watered</label>
-                    <input type="date" id="last-watered" name="lastWatered">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="watering-frequency">Watering Frequency (days) *</label>
+                        <input type="number" id="watering-frequency" name="wateringFrequency" min="1" max="30" required>
+                        <span class="error-message" id="wateringFrequency-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-watered">Last Watered</label>
+                        <input type="date" id="last-watered" name="lastWatered">
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -137,23 +179,41 @@
         </div>
     </div>
 
+   
+
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🌱</span>
-                        <span class="logo-text">PlantPal</span>
-                    </div>
+                    <h3>🌱 Grovi</h3>
                     <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="tracker.html">Plant Tracker</a></li>
+                        <li><a href="gallery.html">My Garden</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Plant Care Tips</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Watering Guide</a></li>
+                        <li><a href="#">Light Requirements</a></li>
+                        <li><a href="#">Soil Care</a></li>
+                        <li><a href="#">Fertilizing Tips</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+                <p>&copy; 2024 Grovi. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/tracker.js"></script>
 </body>
 </html>
