@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - PlantPal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact - Grovi</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <span class="logo-icon">🌱</span>
-                    <span class="logo-text">PlantPal</span>
+                    <span class="logo-text">Grovi</span>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -32,6 +33,9 @@
                         <a href="contact.html" class="nav-link active">Contact</a>
                     </li>
                 </ul>
+                <div class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -45,183 +49,96 @@
         <div class="container">
             <div class="page-header">
                 <h1>Get in Touch</h1>
-                <p>Have questions, suggestions, or need plant care advice? We'd love to hear from you!</p>
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
             </div>
 
             <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="contact-icon">📧</div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p>hello@plantpal.com</p>
-                            </div>
+                <p class="contact-description">
+                    Send us a message and we'll get back to you as soon as possible. 
+                    Whether you need help with plant care or have feedback about Grovi, we're here to help!
+                </p>
+            
+                <form id="contact-form" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name *</label>
+                            <input type="text" id="first-name" name="firstName" required>
                         </div>
-                        <div class="contact-method">
-                            <div class="contact-icon">💬</div>
-                            <div class="contact-details">
-                                <h3>Support</h3>
-                                <p>Available 24/7 for plant emergencies</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="contact-icon">🌍</div>
-                            <div class="contact-details">
-                                <h3>Community</h3>
-                                <p>Join our plant lovers community</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name *</label>
+                            <input type="text" id="last-name" name="lastName" required>
                         </div>
                     </div>
 
-                    <div class="faq-section">
-                        <h3>Frequently Asked Questions</h3>
-                        <div class="faq-item" onclick="toggleFaq(this)">
-                            <div class="faq-question">
-                                <span>How do I reset my plant data?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Your plant data is stored locally in your browser. To reset, you can clear your browser's local storage or use the reset option in the Plant Tracker page.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item" onclick="toggleFaq(this)">
-                            <div class="faq-question">
-                                <span>Can I export my plant data?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>Currently, data is stored locally. We're working on export/import features for future updates.</p>
-                            </div>
-                        </div>
-                        <div class="faq-item" onclick="toggleFaq(this)">
-                            <div class="faq-question">
-                                <span>What if my plant isn't in the type list?</span>
-                                <span class="faq-toggle">+</span>
-                            </div>
-                            <div class="faq-answer">
-                                <p>You can select "Other" as the plant type and add specific details in the care notes section.</p>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
 
-                <div class="contact-form-section">
-                    <h2>Send us a Message</h2>
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first-name">First Name *</label>
-                                <input type="text" id="first-name" name="firstName" required>
-                                <span class="error-message" id="firstName-error"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="last-name">Last Name *</label>
-                                <input type="text" id="last-name" name="lastName" required>
-                                <span class="error-message" id="lastName-error"></span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="email-error"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject</option>
-                                <option value="general">General Question</option>
-                                <option value="plant-care">Plant Care Advice</option>
-                                <option value="bug-report">Bug Report</option>
-                                <option value="feature-request">Feature Request</option>
-                                <option value="feedback">Feedback</option>
-                            </select>
-                            <span class="error-message" id="subject-error"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="plant-experience">Your Plant Experience</label>
-                            <div class="radio-group">
-                                <label class="radio-label">
-                                    <input type="radio" name="experience" value="beginner">
-                                    <span class="radio-custom"></span>
-                                    Beginner (0-1 years)
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="experience" value="intermediate">
-                                    <span class="radio-custom"></span>
-                                    Intermediate (2-5 years)
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="experience" value="expert">
-                                    <span class="radio-custom"></span>
-                                    Expert (5+ years)
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your question, suggestion, or plant care challenge..."></textarea>
-                            <span class="error-message" id="message-error"></span>
-                            <div class="character-count">
-                                <span id="char-count">0</span>/500 characters
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="newsletter" name="newsletter">
-                                <span class="checkbox-custom"></span>
-                                Subscribe to our plant care newsletter
-                            </label>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                <span class="checkbox-custom"></span>
-                                I agree to the terms and conditions *
-                            </label>
-                            <span class="error-message" id="terms-error"></span>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="reset" class="btn btn-secondary">Clear Form</button>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-                    </form>
-
-                    <div id="form-success" class="success-message" style="display: none;">
-                        <div class="success-icon">✅</div>
-                        <h3>Message Sent Successfully!</h3>
-                        <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Question</option>
+                            <option value="plant-care">Plant Care Advice</option>
+                            <option value="bug-report">Bug Report</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+
+                <div id="form-success" class="success-message">
+                    <div class="success-icon">✅</div>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer>
+   <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🌱</span>
-                        <span class="logo-text">PlantPal</span>
-                    </div>
+                    <h3>🌱 Grovi</h3>
                     <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="tracker.html">Plant Tracker</a></li>
+                        <li><a href="gallery.html">My Garden</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Plant Care Tips</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Watering Guide</a></li>
+                        <li><a href="#">Light Requirements</a></li>
+                        <li><a href="#">Soil Care</a></li>
+                        <li><a href="#">Fertilizing Tips</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+                <p>&copy; 2024 Grovi. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
