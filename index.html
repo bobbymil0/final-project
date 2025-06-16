@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlantPal - Your Plant Care Companion</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Grovi - Your Plant Care Companion</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <span class="logo-icon">🌱</span>
-                    <span class="logo-text">PlantPal</span>
+                    <span class="logo-text">Grovi</span>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -32,6 +33,9 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                <div class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -43,45 +47,111 @@
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Keep Your Plants Happy & Healthy</h1>
-                    <p class="hero-description">
-                        Never forget to water your plants again! PlantPal helps you track watering schedules, 
-                        monitor plant health, and build the perfect indoor garden.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
-                        <a href="about.html" class="btn btn-secondary">Learn More</a>
+            <div class="container">
+                <h1 class="hero-title">Keep Your Plants Happy & Healthy</h1>
+                <p class="hero-description">
+                    Never forget to water your plants again! Grovi helps you track watering schedules, 
+                    monitor plant health, and build the perfect indoor garden.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tracker.html" class="btn btn-primary">Start Tracking</a>
+                    <a href="about.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number" id="hero-plants">0</span>
+                        <span class="stat-label">Plants Tracked</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number" id="hero-days">0</span>
+                        <span class="stat-label">Days Active</span>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="plant-illustration">
-                        <div class="pot"></div>
-                        <div class="plant">
-                            <div class="leaf leaf-1"></div>
-                            <div class="leaf leaf-2"></div>
-                            <div class="leaf leaf-3"></div>
-                            <div class="stem"></div>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <div class="container">
+                <div class="quick-actions-grid">
+                    <a href="tracker.html" class="quick-action-card">
+                        <div class="action-icon">➕</div>
+                        <h3>Add Plant</h3>
+                        <p>Register a new plant</p>
+                    </a>
+                    <a href="gallery.html" class="quick-action-card">
+                        <div class="action-icon">📸</div>
+                        <h3>View Gallery</h3>
+                        <p>Browse your collection</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="todays-tasks" id="todays-tasks">
+            <div class="container">
+                <h2 class="section-title">Today's Plant Care Tasks</h2>
+                <div class="tasks-container">
+                    <div class="task-summary">
+                        <div class="task-stat">
+                            <span class="task-number" id="tasks-water">0</span>
+                            <span class="task-label">Need Water</span>
+                        </div>
+                        <div class="task-stat">
+                            <span class="task-number" id="tasks-overdue">0</span>
+                            <span class="task-label">Overdue</span>
+                        </div>
+                        <div class="task-stat">
+                            <span class="task-number" id="tasks-upcoming">0</span>
+                            <span class="task-label">Upcoming</span>
+                        </div>
+                    </div>
+                    <div class="tasks-list" id="tasks-list">
+                        <div class="no-tasks">
+                            <div class="no-tasks-icon">✅</div>
+                            <p>All caught up! Your plants are happy today.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="weather-widget">
+            <div class="container">
+                <div class="weather-card">
+                    <h3>Plant Care Weather</h3>
+                    <div class="weather-info" id="weather-info">
+                        <div class="weather-item">
+                            <span class="weather-icon">🌡️</span>
+                            <span class="weather-label">Temperature:</span>
+                            <span class="weather-value" id="temperature">--°F</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="weather-icon">💧</span>
+                            <span class="weather-label">Humidity:</span>
+                            <span class="weather-value" id="humidity">--%</span>
+                        </div>
+                        <div class="weather-recommendation" id="weather-recommendation">
+                            <p>Enable location to get personalized plant care recommendations!</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary btn-small" onclick="getWeatherData()">Get Weather</button>
+                </div>
+            </div>
+        </section>
+
         <section class="features">
             <div class="container">
-                <h2 class="section-title">Why Choose PlantPal?</h2>
+                <h2 class="section-title">Why Choose Grovi?</h2>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">💧</div>
                         <h3>Smart Watering Reminders</h3>
-                        <p>Get personalized watering schedules based on your plant types and care needs.</p>
+                        <p>Get personalized watering schedules based on your plant types and environmental conditions.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📊</div>
                         <h3>Health Tracking</h3>
-                        <p>Monitor your plants' health status and track their growth over time.</p>
+                        <p>Monitor your plants' health status, track growth, and identify potential issues early.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">🏡</div>
@@ -91,26 +161,40 @@
                     <div class="feature-card">
                         <div class="feature-icon">📱</div>
                         <h3>Mobile Friendly</h3>
-                        <p>Access your plant care tracker anywhere, on any device.</p>
+                        <p>Access your plant care tracker anywhere, on any device, with full offline support.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌙</div>
+                        <h3>Dark Mode</h3>
+                        <p>Easy on the eyes with automatic dark mode that adapts to your preferences.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Progress Analytics</h3>
+                        <p>Track your plant care journey with detailed statistics and growth insights.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats">
+        <section class="care-tips-preview">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="1000">0</div>
-                        <div class="stat-label">Happy Plants</div>
+                <h2 class="section-title">Plant Care Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">💡</div>
+                        <h3>Tip of the Day</h3>
+                        <p id="daily-tip">Check soil moisture by inserting your finger 1-2 inches deep. If it's dry, it's time to water!</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="500">0</div>
-                        <div class="stat-label">Plant Parents</div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🌡️</div>
+                        <h3>Weather Alert</h3>
+                        <p id="weather-tip">Today's humidity is perfect for most houseplants. Consider misting tropical varieties.</p>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-target="95">0</div>
-                        <div class="stat-label">Success Rate</div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📖</div>
+                        <h3>Plant Fact</h3>
+                        <p id="plant-fact">Did you know? Snake plants can survive in low light and help purify the air while you sleep!</p>
                     </div>
                 </div>
             </div>
@@ -120,8 +204,11 @@
             <div class="container">
                 <div class="cta-content">
                     <h2>Ready to Start Your Plant Journey?</h2>
-                    <p>Join thousands of plant lovers who trust PlantPal to keep their green friends thriving.</p>
-                    <a href="tracker.html" class="btn btn-primary btn-large">Get Started Now</a>
+                    <p>Join thousands of plant lovers who trust Grovi to keep their green friends thriving.</p>
+                    <div class="cta-buttons">
+                        <a href="tracker.html" class="btn btn-primary btn-large">Get Started Now</a>
+                        <a href="gallery.html" class="btn btn-secondary btn-large">View Demo</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -131,15 +218,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🌱</span>
-                        <span class="logo-text">PlantPal</span>
-                    </div>
+                    <h3>🌱 Grovi</h3>
                     <p>Your trusted companion for plant care and garden management.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
                         <li><a href="tracker.html">Plant Tracker</a></li>
                         <li><a href="gallery.html">My Garden</a></li>
                         <li><a href="about.html">About</a></li>
@@ -147,16 +231,17 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Plant Care Tips</h4>
-                    <ul>
-                        <li><a href="#" onclick="showTip('watering')">Watering Guide</a></li>
-                        <li><a href="#" onclick="showTip('light')">Light Requirements</a></li>
-                        <li><a href="#" onclick="showTip('soil')">Soil Care</a></li>
+                    <h3>Plant Care Tips</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Watering Guide</a></li>
+                        <li><a href="#">Light Requirements</a></li>
+                        <li><a href="#">Soil Care</a></li>
+                        <li><a href="#">Fertilizing Tips</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+                <p>&copy; 2024 Grovi. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -169,6 +254,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>
