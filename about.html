@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - PlantPal</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About - Grovi</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,7 @@
             <div class="nav-container">
                 <div class="nav-logo">
                     <span class="logo-icon">🌱</span>
-                    <span class="logo-text">PlantPal</span>
+                    <span class="logo-text">Grovi</span>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -32,6 +33,9 @@
                         <a href="contact.html" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                <div class="theme-toggle" id="theme-toggle" title="Toggle dark mode">
+                    <span class="theme-icon">🌙</span>
+                </div>
                 <div class="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -44,22 +48,22 @@
     <main class="about-main">
         <div class="container">
             <div class="page-header">
-                <h1>About PlantPal</h1>
+                <h1>About Grovi</h1>
                 <p>Your digital companion for successful plant parenting</p>
             </div>
 
             <section class="about-content">
                 <div class="about-section">
-                    <h2>Why PlantPal?</h2>
+                    <h2>Why Grovi?</h2>
                     <p>
-                        PlantPal was created out of a simple need: helping plant lovers keep their green friends alive and thriving. 
+                        Grovi was created out of a simple need: helping plant lovers keep their green friends alive and thriving. 
                         Too many beautiful plants have met their demise due to forgotten watering schedules or lack of proper care tracking. 
                         Our mission is to make plant care simple, organized, and enjoyable for everyone.
                     </p>
                 </div>
 
                 <div class="features-detailed">
-                    <h2>How PlantPal Works</h2>
+                    <h2>How Grovi Works</h2>
                     <div class="feature-steps">
                         <div class="step">
                             <div class="step-number">1</div>
@@ -82,108 +86,6 @@
                                 <p>Browse your plant collection in a beautiful gallery with filtering and sorting options.</p>
                             </div>
                         </div>
-                        <div class="step">
-                            <div class="step-number">4</div>
-                            <div class="step-content">
-                                <h3>Stay Organized</h3>
-                                <p>Keep notes, track health status, and maintain a complete record of your plant care journey.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="plant-care-guide">
-                    <h2>Plant Care Basics</h2>
-                    <div class="care-tips">
-                        <div class="tip-card" onclick="toggleTip(this)">
-                            <div class="tip-header">
-                                <h3>💧 Watering Guidelines</h3>
-                                <span class="tip-toggle">+</span>
-                            </div>
-                            <div class="tip-content">
-                                <ul>
-                                    <li><strong>Check soil moisture:</strong> Stick your finger 1-2 inches into the soil</li>
-                                    <li><strong>Water thoroughly:</strong> Water until it drains from the bottom</li>
-                                    <li><strong>Avoid overwatering:</strong> Most plants prefer slightly dry soil over soggy conditions</li>
-                                    <li><strong>Consider the season:</strong> Plants need less water in winter</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="tip-card" onclick="toggleTip(this)">
-                            <div class="tip-header">
-                                <h3>☀️ Light Requirements</h3>
-                                <span class="tip-toggle">+</span>
-                            </div>
-                            <div class="tip-content">
-                                <ul>
-                                    <li><strong>Bright, indirect light:</strong> Near a window but not in direct sun</li>
-                                    <li><strong>Direct sunlight:</strong> South-facing windows (be careful of burning)</li>
-                                    <li><strong>Low light:</strong> North-facing windows or interior spaces</li>
-                                    <li><strong>Rotate regularly:</strong> Turn plants weekly for even growth</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="tip-card" onclick="toggleTip(this)">
-                            <div class="tip-header">
-                                <h3>🌡️ Temperature & Humidity</h3>
-                                <span class="tip-toggle">+</span>
-                            </div>
-                            <div class="tip-content">
-                                <ul>
-                                    <li><strong>Room temperature:</strong> Most houseplants prefer 65-75°F (18-24°C)</li>
-                                    <li><strong>Avoid drafts:</strong> Keep away from heating/cooling vents</li>
-                                    <li><strong>Increase humidity:</strong> Use a humidifier or pebble tray</li>
-                                    <li><strong>Group plants:</strong> Plants create their own microclimate</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="tip-card" onclick="toggleTip(this)">
-                            <div class="tip-header">
-                                <h3>🌱 Common Plant Types</h3>
-                                <span class="tip-toggle">+</span>
-                            </div>
-                            <div class="tip-content">
-                                <table class="plant-types-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Type</th>
-                                            <th>Watering</th>
-                                            <th>Light</th>
-                                            <th>Examples</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Succulents</td>
-                                            <td>Every 7-14 days</td>
-                                            <td>Bright, direct</td>
-                                            <td>Aloe, Echeveria</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tropical</td>
-                                            <td>Every 5-7 days</td>
-                                            <td>Bright, indirect</td>
-                                            <td>Monstera, Pothos</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cacti</td>
-                                            <td>Every 14-21 days</td>
-                                            <td>Bright, direct</td>
-                                            <td>Barrel, Prickly Pear</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ferns</td>
-                                            <td>Every 3-5 days</td>
-                                            <td>Low to medium</td>
-                                            <td>Boston, Maidenhair</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -192,19 +94,15 @@
                     <div class="tech-features">
                         <div class="tech-feature">
                             <h3>📱 Responsive Design</h3>
-                            <p>Works perfectly on desktop, tablet, and mobile devices</p>
+                            <p>Works perfectly on desktop, tablet, and mobile devices with adaptive layouts</p>
                         </div>
                         <div class="tech-feature">
                             <h3>💾 Local Storage</h3>
-                            <p>Your plant data is saved locally in your browser</p>
+                            <p>Your plant data is saved locally in your browser with import/export capabilities</p>
                         </div>
                         <div class="tech-feature">
                             <h3>🎨 Clean Interface</h3>
-                            <p>Intuitive design focused on usability and aesthetics</p>
-                        </div>
-                        <div class="tech-feature">
-                            <h3>⚡ Fast Performance</h3>
-                            <p>Built with vanilla JavaScript for optimal speed</p>
+                            <p>Intuitive design focused on usability and aesthetics with dark mode support</p>
                         </div>
                     </div>
                 </div>
@@ -212,23 +110,38 @@
         </div>
     </main>
 
-    <footer>
+   <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🌱</span>
-                        <span class="logo-text">PlantPal</span>
-                    </div>
+                    <h3>🌱 Grovi</h3>
                     <p>Your trusted companion for plant care and garden management.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="tracker.html">Plant Tracker</a></li>
+                        <li><a href="gallery.html">My Garden</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Plant Care Tips</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Watering Guide</a></li>
+                        <li><a href="#">Light Requirements</a></li>
+                        <li><a href="#">Soil Care</a></li>
+                        <li><a href="#">Fertilizing Tips</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 PlantPal. Made with 💚 for plant lovers everywhere.</p>
+                <p>&copy; 2024 Grovi. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/base.js"></script>
 </body>
 </html>
